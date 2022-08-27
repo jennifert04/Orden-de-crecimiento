@@ -37,8 +37,8 @@ public class Algoritmo {
         
         //matriz1.InversaMatriz();
         Matriz m4 = new Matriz(m2);
-        m4.CuadradoMagico(5);
         
+       
         
         
         
@@ -49,6 +49,7 @@ public class Algoritmo {
         num = cadena.hashCode()%5;
         return num;
     }
+    
     
     
 }

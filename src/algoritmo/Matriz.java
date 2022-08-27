@@ -11,7 +11,12 @@ package algoritmo;
  */
 public class Matriz {
 
-    private double[][] matriz;
+    double[][] matriz;
+    private int orden;
+    
+    public Matriz(int orden){
+        this.orden=orden;
+    }
 
     public Matriz(double matriz[][]) {
         this.matriz = matriz;
@@ -62,9 +67,9 @@ public class Matriz {
         return false;
     }
 
-    public void CuadradoMagico(int n) {
+    public Matriz CuadradoMagico(int n) {
 
-        int[][] magicSquare = new int[n][n];
+        int[][] cuadrado = new int[n][n];
  
         // Initialize position for 1
         int i = n / 2;
@@ -90,20 +95,22 @@ public class Matriz {
             }
  
             // 2nd condition
-            if (magicSquare[i][j] != 0) {
+            if (cuadrado[i][j] != 0) {
                 j -= 2;
                 i++;
                 continue;
             }
             else
                 // set number
-                magicSquare[i][j] = num++;
+                cuadrado[i][j] = num++;
  
             // 1st condition
             j++;
             i--;
         }
- 
+        Matriz cuadradomagico = new Matriz(n);
+        return cuadradomagico;
+        /*
         // print magic square
         System.out.println("The Magic Square for " + n
                            + ":");
@@ -111,10 +118,10 @@ public class Matriz {
                            + n * (n * n + 1) / 2 + ":");
         for (i = 0; i < n; i++) {
             for (j = 0; j < n; j++)
-                System.out.print(magicSquare[i][j] + " ");
+                System.out.print(cuadrado[i][j] + " ");
             System.out.println();
-        }
-
+        }*/
+        
     }   
 
     public static void main(String[] args) { //prueba unitaria suma y producto
@@ -134,6 +141,13 @@ public class Matriz {
             {156, 114, 262},
             {154, 140, 192},
             {70, 59, 105},};
+        int[][] cuadrado = {//cuadrado perfecto
+            {8, 3, 22, 16, 15},
+            {2, 21, 20, 14, 8},
+            {25, 19, 13, 7, 1},
+            {18, 12, 6, 5, 24},
+            {11, 10, 4, 23, 17},};
+        
 
         Matriz matriz1 = new Matriz(m1);
 
@@ -142,10 +156,14 @@ public class Matriz {
         Matriz matriz3 = new Matriz(m3);
 
         Matriz matriz4 = new Matriz(m4);
+        
+        Matriz mágico = new Matriz(5);
 
         assert (matriz1.sumaMatrices(matriz2).equals(matriz3));
 
         assert (matriz1.productoMatrices(matriz2).equals(matriz4));
+        
+        assert(mágico.CuadradoMagico(5).equals(cuadrado));
 
     }
          
