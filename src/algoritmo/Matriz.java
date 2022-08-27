@@ -13,7 +13,7 @@ public class Matriz {
 
     private double[][] matriz;
 
-    public Matriz(/*double matriz[][]*/) {
+    public Matriz(double matriz[][]) {
         this.matriz = matriz;
     }
     double temp[];
@@ -69,9 +69,9 @@ public class Matriz {
         // Initialize position for 1
         int i = n / 2;
         int j = n - 1;
- 
+        int orden = n*n;
         // One by one put all values in magic square
-        for (int num = 1; num <= n * n;) {
+        for (int num = 1; num <= orden;) {
             if (i == -1 && j == n) // 3rd condition
             {
                 j = n - 2;
@@ -115,97 +115,7 @@ public class Matriz {
             System.out.println();
         }
 
-        /*
-    public void InversaMatriz() {
-        double[][] mIdentidad = new double[matriz.length][matriz[0].length];
-
-        //Agregar la matriz identidad
-        for (int i = 0; i < matriz.length; i++) {
-
-            for (int j = 0; j < 2 * matriz[0].length; j++) {
-
-                // Add '1' at the diagonal places of
-                // the matrix to create a identity matrix
-                if (j == (i + matriz[0].length -1)) {
-                    mIdentidad[i][j] = 1;
-                }
-                if (i == j) {
-                    mIdentidad[i][j] = 1;
-                }
-            }
-        }
-        Matriz Identidad = new Matriz(mIdentidad);
-
-        for (int i = matriz.length - 1; i > 0; i--) {
-
-            // Swapping each and every element of the two rows
-            if (Identidad.matriz[i - 1][0] < Identidad.matriz[i][0]) {
-                for (int j = 0; j < 2 * matriz.length; j++) {
-                    //
-                    //        // Swapping of the row, if above
-                    //        // condition satisfied.
-                    temp = matriz[i][j];
-                    Identidad.matriz[i][j] = Identidad.matriz[i - 1][j];
-                    Identidad.matriz[i - 1][j] = temp;
-                }
-            }
-            if (Identidad.matriz[i - 1][0] < Identidad.matriz[i][0]) {
-                
-                temp = Identidad.matriz[i];
-                Identidad.matriz[i] = Identidad.matriz[i - 1];
-                Identidad.matriz[i - 1] = temp;
-            }
-
-            // Directly swapping the rows using pointers saves
-            // time
-        }
-        System.out.println(temp);
-        for (int i = 0; i < Identidad.matriz.length; i++) {
-            for (int j = 0; j < Identidad.matriz[0].length; j++) {
-                System.out.print(Identidad.matriz[i][j]);
-            }
-            System.out.println("");
-        }
-
-        for (int i = 0; i < matriz.length; i++) {
-
-            for (int j = 0; j < matriz[0].length; j++) {
-
-                if (j != i) {
-
-                    temp1 = Identidad.matriz[j][i] / Identidad.matriz[i][i];
-                    for (int k = 0; k < matriz.length; k++) {
-
-                        Identidad.matriz[j][k] -= Identidad.matriz[i][k] * temp1;
-                    }
-                }
-            }
-        }
-        
-        for (int i = 0; i < Identidad.matriz.length; i++) {
-            for (int j = 0; j < Identidad.matriz[0].length; j++) {
-                System.out.print(Identidad.matriz[i][j]);
-            }
-            System.out.println("");
-        }
-
-        for (int i = 0; i < matriz.length; i++) {
-            temp1 = Identidad.matriz[i][i];
-            for (int j = 0; j < (matriz.length); j++) {
-                Identidad.matriz[i][j] = Identidad.matriz[i][j] / temp1;
-            }
-
-        }
-        
-        System.out.println("\n====Matriz inversa====\n");
-        for (int i = 0; i < Identidad.matriz.length; i++) {
-            for (int j = 0; j < Identidad.matriz[0].length; j++) {
-                System.out.print(Identidad.matriz[i][j]);
-            }
-            System.out.println("");
-        }
-
-    }
+    }   
 
     public static void main(String[] args) { //prueba unitaria suma y producto
         double[][] m1 = {
@@ -238,6 +148,6 @@ public class Matriz {
         assert (matriz1.productoMatrices(matriz2).equals(matriz4));
 
     }
-         */
-    }
+         
 }
+

@@ -36,8 +36,8 @@ public class Algoritmo {
         //Matriz matriz2 = new Matriz(m2);
         
         //matriz1.InversaMatriz();
-        Matriz m4 = new Matriz();
-        m4.CuadradoMagico(3);
+        Matriz m4 = new Matriz(m2);
+        m4.CuadradoMagico(5);
         
         
         
