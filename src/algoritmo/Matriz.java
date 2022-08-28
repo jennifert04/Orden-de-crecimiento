@@ -4,14 +4,14 @@
  * and open the template in the editor.
  */
 package algoritmo;
-
+import edu.princeton.cs.algs4.Stopwatch;
 /**
  *
  * @author Jennifer
  */
 public class Matriz {
 
-    double[][] matriz;
+    private double[][] matriz;
     private int orden;
 
     public Matriz(int orden) {
@@ -100,41 +100,37 @@ public class Matriz {
             if((n-1)%2 == 0){
 
                 double[][] cuadrado = new double[n][n];
-                // Initialize position for 1
+                
                 int i = n / 2;
                 int j = n - 1;
-                int orden = n * n;
+                int m = n * n;
 
-                // One by one put all values in magic square
-                for (int num = 1; num <= orden;) {
-                    if (i == -1 && j == n) // 3rd condition
+                for (int num = 1; num <= m;) {
+                    if (i == -1 && j == n) 
                     {
                         j = n - 2;
                         i = 0;
                     } else {
-                        // 1st condition helper if next number
-                        // goes to out of square's right side
+                        
                         if (j == n) {
                             j = 0;
                         }
 
-                        // 1st condition helper if next number is
-                        // goes to out of square's upper side
+                        
                         if (i < 0) {
                             i = n - 1;
                         }
                     }
 
-                    // 2nd condition
+                    
                     if (cuadrado[i][j] != 0) {
                         j -= 2;
                         i++;
                         continue;
-                    } else // set number
+                    } else 
                     {
                         cuadrado[i][j] = num++;
                     }
-                    // 1st condition
                     j++;
                     i--;
                 }
@@ -152,10 +148,10 @@ public class Matriz {
         }  
     }
 
-    public static void main(String[] args) { //prueba unitaria suma y producto
+    public static void main(String[] args) { //prueba unitaria suma, producto, cuadrado mágico
          
         
-        /*double[][] m1 = {
+        double[][] m1 = {
             {5, 8, 7},
             {11, 3, 10},
             {6, 3, 2},};
@@ -188,22 +184,23 @@ public class Matriz {
 
         Matriz matriz4 = new Matriz(m4);
 
-        Matriz mágico = new Matriz(5);
+        Matriz mágico1 = new Matriz(5);
 
         Matriz cuadrado1 = new Matriz(cuadrado);
         
-
+        
         assert (matriz1.sumaMatrices(matriz2).equals(matriz3));
 
         assert (matriz1.productoMatrices(matriz2).equals(matriz4));
 
-        assert (mágico.CuadradoMagico(5).equals(cuadrado1));*/
+        assert (mágico1.CuadradoMagico(5).equals(cuadrado1));
         
         Stopwatch w = new Stopwatch();
-        Matriz mágico = new Matriz(3001);
-        mágico.CuadradoMagico(3001);
+        Matriz mágico = new Matriz(4001);
+        mágico.CuadradoMagico(4001);
         
         System.out.println("Tiempo: " + w.elapsedTime());
+
     }
 
 
