@@ -153,7 +153,9 @@ public class Matriz {
     }
 
     public static void main(String[] args) { //prueba unitaria suma y producto
-        double[][] m1 = {
+         
+        
+        /*double[][] m1 = {
             {5, 8, 7},
             {11, 3, 10},
             {6, 3, 2},};
@@ -176,8 +178,7 @@ public class Matriz {
             {18, 12, 6, 5, 24},
             {11, 10, 4, 23, 17},};
         
-        Stopwatch w = new Stopwatch();
-        
+       
 
         Matriz matriz1 = new Matriz(m1);
 
@@ -190,12 +191,19 @@ public class Matriz {
         Matriz mágico = new Matriz(5);
 
         Matriz cuadrado1 = new Matriz(cuadrado);
+        
 
         assert (matriz1.sumaMatrices(matriz2).equals(matriz3));
 
         assert (matriz1.productoMatrices(matriz2).equals(matriz4));
 
-        assert (mágico.CuadradoMagico(5).equals(cuadrado1));
+        assert (mágico.CuadradoMagico(5).equals(cuadrado1));*/
+        
+        Stopwatch w = new Stopwatch();
+        Matriz mágico = new Matriz(3001);
+        mágico.CuadradoMagico(3001);
+        
+        System.out.println("Tiempo: " + w.elapsedTime());
     }
 
 
