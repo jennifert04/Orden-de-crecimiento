@@ -13,6 +13,10 @@ public class Matriz {
 
     private double[][] matriz;
     private int orden;
+    
+    public int getOrden() {
+        return orden;
+    }
 
     public Matriz(int orden) {
         this.orden = orden;
@@ -23,6 +27,14 @@ public class Matriz {
     }
     double temp[];
     double temp1;
+    
+    
+    public static int hashsID (String id1, String id2){
+        int num;
+        String cadena = id1 + id2;
+        num = cadena.hashCode()%5;
+        return num;
+    }
 
     public Matriz sumaMatrices(Matriz m2) {
         try{
@@ -97,7 +109,7 @@ public class Matriz {
 
     public Matriz CuadradoMagico(int n) {
         try{
-            if((n-1)%2 == 0){
+            if((n-1)%2 == 0 && n > 0){
 
                 double[][] cuadrado = new double[n][n];
                 
@@ -150,6 +162,10 @@ public class Matriz {
 
     public static void main(String[] args) { //prueba unitaria suma, producto, cuadrado mágico
          
+        String id1 = "000451560";
+        String id2 = "000462017";
+        int num = hashsID(id2, id1);
+        System.out.println(num);
         
         double[][] m1 = {
             {5, 8, 7},

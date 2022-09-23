@@ -9,18 +9,14 @@ package algoritmo;
  *
  * @author Jennifer
  */
-public class Algoritmo {
+public class Taller2 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        String id1 = "000451560";
-        String id2 = "000462017";
-        int num = hashsID(id2, id1);
-        System.out.println(num);
-
+        
         double[][] m1 = {
                 {10, 5, 12},
                 {98, 5, 6},
@@ -31,25 +27,20 @@ public class Algoritmo {
                 {19, 56, 4},
                 {8, 76, 90},
         };
-        //Matriz matriz1 = new Matriz(m1);
         
-        //Matriz matriz2 = new Matriz(m2);
+        Matriz matriz1 = new Matriz(m1);
+        Matriz matriz2 = new Matriz(m2);
+        Matriz matriz3 = new Matriz(5);
         
-        //matriz1.InversaMatriz();
-        Matriz m4 = new Matriz(m2);
+        System.out.println("Suma de matrices");
+        System.out.println((matriz1.sumaMatrices(matriz2)).toString());
         
+        System.out.println("Producto de matrices");
+        System.out.println((matriz1.productoMatrices(matriz2)).toString());
        
-        
-        
+        System.out.println("Cuadrado mágico");
+        System.out.println((matriz3.CuadradoMagico(matriz3.getOrden()).toString()));
         
     }
-    public static int hashsID (String id1, String id2){
-        int num;
-        String cadena = id1 + id2;
-        num = cadena.hashCode()%5;
-        return num;
-    }
-    
-    
-    
+  
 }
